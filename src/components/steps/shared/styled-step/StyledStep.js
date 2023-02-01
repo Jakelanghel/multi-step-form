@@ -27,6 +27,50 @@ export const StyledStep = styled.main`
     line-height: 1.5rem;
   }
 
+  .title-2 {
+    font-size: 1rem;
+    color: var(--marine-blue);
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .grey-txt {
+    color: var(--cool-gray);
+    margin: 0.35rem 0;
+  }
+
+  .grey-txt-2 {
+    font-size: 0.9rem;
+    color: var(--purplish-blue);
+  }
+
+  .sml-blue-txt {
+    font-size: 0.85rem;
+    color: var(--marine-blue);
+  }
+
+  .container-flex-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .container-flex-item {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
+    border: solid 1px var(--light-gray);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
   /* STEP-1 =========================================================== */
   .input-label {
     display: flex;
@@ -68,38 +112,34 @@ export const StyledStep = styled.main`
 
   /* STEP-2 =========================================================== */
 
-  .container-plans {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .selected-plan {
+    border: solid 2px var(--marine-blue);
   }
 
-  .plan {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border: solid 1px var(--light-gray);
-    border-radius: 10px;
+  .selected-plan {
+    border: solid 1px var(--marine-blue);
+    background-color: var(--alabaster);
   }
 
   .plan-icon {
     align-self: start;
   }
 
-  .plan-type {
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-
   .plan-price {
-    font-size: 0.95rem;
-    color: var(--cool-gray);
-    margin: 0.25rem 0;
+    font-size: 0.9rem;
   }
 
-  .discount {
-    font-size: 0.85rem;
+  .monthly,
+  .yearly {
+    font-size: 0.95rem;
+    text-transform: capitalize;
+  }
+
+  .yearly {
+    color: var(--cool-gray);
+  }
+
+  .monthly {
     color: var(--marine-blue);
   }
 
@@ -137,5 +177,25 @@ export const StyledStep = styled.main`
 
   .slide-right {
     margin-left: auto;
+  }
+
+  /* STEP-3 =========================================================== */
+
+  .container-check-mark {
+    background-color: var(--purplish-blue);
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-on-details {
+    font-size: 0.85rem;
+  }
+
+  .add-on-price {
+    font-size: 0.85rem;
   }
 `;
