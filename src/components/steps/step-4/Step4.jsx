@@ -4,7 +4,8 @@ import { StyledStep } from "../shared/StyledStep";
 import BillAddOn from "./BillAddOn";
 
 const Step4 = (props) => {
-  console.log(props.selectedPlan);
+  const { selectedPlan, selectedAddOns, isYearly } = props;
+
   const getPlanPrice = (plan, isYearly) => {
     const price = isYearly ? plan.price.yr : plan.price.mo;
     return `$${price}/${isYearly ? "yr" : "mo"}`;
@@ -19,24 +20,20 @@ const Step4 = (props) => {
     arr.forEach((addOn) => {
       isYearly ? (price += addOn.price.yr) : (price += addOn.price.mo);
     });
-    return props.isYearly ? `+$${price}/yr` : `+$${price}/mo`;
+    return isYearly ? `+$${price}/yr` : `+$${price}/mo`;
   };
 
-  const planString = getPlanType(props.selectedPlan, props.isYearly);
-  const priceString = getPlanPrice(props.selectedPlan, props.isYearly);
-  const totalString = getTotal(
-    props.selectedPlan,
-    props.selectedAddOns,
-    props.isYearly
-  );
+  const planString = getPlanType(selectedPlan, isYearly);
+  const priceString = getPlanPrice(selectedPlan, isYearly);
+  const totalString = getTotal(selectedPlan, selectedAddOns, isYearly);
 
-  const addOnElements = props.selectedAddOns.map((a) => {
+  const addOnElements = selectedAddOns.map((a) => {
     return (
       <BillAddOn
         key={nanoid()}
         service={a.service}
         price={a.price}
-        isYearly={props.isYearly}
+        isYearly={isYearly}
       />
     );
   });
@@ -63,13 +60,13 @@ const Step4 = (props) => {
         </div>
 
         <div className="container-add-ons">
-          {props.selectedAddOns.length > 0 ? addOnElements : null}
+          {selectedAddOns.length > 0 ? addOnElements : null}
         </div>
       </div>
 
       <div className="container-bill-item total">
         <p className="bill-grey-txt">
-          {`total (per ${props.isYearly ? "year" : "month"})`}
+          {`total (per ${isYearly ? "year" : "month"})`}
         </p>
         <p className="total-price">{totalString}</p>
       </div>

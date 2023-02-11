@@ -7,7 +7,7 @@ import Step2 from "./components/steps/step-2/Step2";
 import Step3 from "./components/steps/step-3/Step3";
 import Step4 from "./components/steps/step-4/Step4";
 import FormNavigation from "./components/form-navigation/FormNavigation";
-import { plans } from "./data/plans";
+import { plansData } from "./data/plans";
 import { addOnData } from "./data/addOns";
 
 import { images } from "./constants/images";
@@ -38,9 +38,8 @@ function App() {
         ) : currentStep === 2 ? (
           <Step2
             setData={setData}
-            // data={data}
             isYearly={data.isYearly}
-            plansArr={plans}
+            plansData={plansData}
           />
         ) : currentStep === 3 ? (
           <Step3
@@ -52,9 +51,7 @@ function App() {
           />
         ) : (
           <Step4
-            plans={plans}
-            addOnData={addOnData}
-            selectedPlan={plans[data.selectedPlan]}
+            selectedPlan={plansData[data.selectedPlan]}
             selectedAddOns={data.addOns}
             isYearly={data.isYearly}
           />

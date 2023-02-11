@@ -3,7 +3,7 @@ import { StyledStep } from "../shared/StyledStep";
 import Plan from "./plan/Plan";
 
 const Step2 = (props) => {
-  const { setData, isYearly, plansArr } = props;
+  const { setData, isYearly, plansData } = props;
 
   const toggleYearly = () => {
     setData((oldState) => ({
@@ -12,18 +12,9 @@ const Step2 = (props) => {
     }));
   };
 
-  const planElements = plansArr.map((p, i) => {
+  const planElements = plansData.map((p, i) => {
     return (
-      <Plan
-        key={i}
-        index={i}
-        yearlyPrice={p.price.yr}
-        monthlyPrice={p.price.mo}
-        planType={p.type}
-        planImg={p.img}
-        isYearly={isYearly}
-        setData={setData}
-      />
+      <Plan key={i} index={i} plan={p} isYearly={isYearly} setData={setData} />
     );
   });
 

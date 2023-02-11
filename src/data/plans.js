@@ -1,5 +1,5 @@
 import { images } from "../constants/images";
-export const plans = [
+export const plansData = [
   {
     type: "arcade",
     price: { mo: 9, yr: 90 },

@@ -1,15 +1,7 @@
 import React, { useRef } from "react";
 
 const Plan = (props) => {
-  const {
-    index,
-    yearlyPrice,
-    monthlyPrice,
-    planType,
-    planImg,
-    isYearly,
-    setData,
-  } = props;
+  const { index, plan, isYearly, setData } = props;
 
   const planRef = useRef();
 
@@ -24,7 +16,7 @@ const Plan = (props) => {
     }));
   };
 
-  const price = isYearly ? yearlyPrice : monthlyPrice;
+  const price = isYearly ? plan.price.mo : plan.price.yr;
   const priceString = isYearly ? `$${price}/yr` : `$${price}/mo`;
 
   return (
@@ -34,9 +26,9 @@ const Plan = (props) => {
       data-index={index}
       ref={planRef}
     >
-      <img src={planImg} alt="" className="plan-icon" />
+      <img src={plan.img} alt="" className="plan-icon" />
       <div className="container-plan-details">
-        <p className="title-2">{planType}</p>
+        <p className="title-2">{plan.type}</p>
         <p className="grey-txt plan-price">{priceString}</p>
         {isYearly ? <p className="sml-blue-txt">2 months free</p> : null}
       </div>

@@ -6,17 +6,13 @@ const Step3 = (props) => {
   const { setData, isYearly, addOnData, selectedAddOns, checkMarkIcon } = props;
 
   const addOnElements = addOnData.map((a, i) => {
-    const planPriceString = isYearly
-      ? `+$${a.price.yr}/yr`
-      : `+$${a.price.mo}/mo`;
     return (
       <AddOn
         key={i}
         index={i}
+        addOn={a}
         setData={setData}
-        service={a.service}
-        details={a.details}
-        planPriceString={planPriceString}
+        isYearly={isYearly}
         checkMarkIcon={checkMarkIcon}
         selectedAddOns={selectedAddOns}
         addOnData={addOnData}

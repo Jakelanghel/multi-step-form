@@ -3,10 +3,9 @@ import React, { useState, useRef } from "react";
 const AddOn = (props) => {
   const {
     index,
+    addOn,
     setData,
-    service,
-    details,
-    planPriceString,
+    isYearly,
     checkMarkIcon,
     selectedAddOns,
     addOnData,
@@ -14,13 +13,11 @@ const AddOn = (props) => {
 
   const AddOnRef = useRef();
   const [isChecked, setIsChecked] = useState(false);
-  console.log(selectedAddOns);
   const checkIsSelected = (selectedAddOns, addOnIndex) => {
     return selectedAddOns.every((a) => a.index !== addOnIndex);
   };
 
   const removeAddon = (setData, addOnIndex) => {
-    // return arr.filter((a) => a.index !== index);
     setData((oldState) => {
       const updatedAddOns = oldState.addOns.filter(
         (a) => a.index !== addOnIndex
@@ -46,6 +43,10 @@ const AddOn = (props) => {
       : removeAddon(setData, addOnIndex);
   };
 
+  const addOnPriceString = isYearly
+    ? `+$${addOn.price.yr}/yr`
+    : `+$${addOn.price.mo}/mo`;
+
   return (
     <div
       className="container-flex-item space-between"
@@ -57,12 +58,12 @@ const AddOn = (props) => {
         {isChecked ? <img src={checkMarkIcon} alt="" /> : null}
       </div>
       <div className="add-on-details">
-        <p className="title-2">{service}</p>
-        <p className="grey-txt add-on-details">{details}</p>
+        <p className="title-2">{addOn.service}</p>
+        <p className="grey-txt add-on-details">{addOn.details}</p>
       </div>
 
       <div className="add-on-price">
-        <p className="grey-txt-2 add-on-price">{planPriceString}</p>
+        <p className="grey-txt-2 add-on-price">{addOnPriceString}</p>
       </div>
     </div>
   );
