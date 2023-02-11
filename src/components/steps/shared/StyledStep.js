@@ -286,4 +286,30 @@ export const StyledStep = styled.main`
   .total-price {
     font-weight: 700;
   }
+
+  /* STEP-4 ==================================================================================== */
+
+  .container-thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    text-align: center;
+  }
+  .thanks-icon {
+    width: 60px;
+  }
+
+  .thanks-title {
+    font-size: 1.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .thanks-p {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    max-width: 340px;
+    color: var(--cool-gray);
+  }
 `;

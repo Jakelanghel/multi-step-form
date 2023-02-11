@@ -19,4 +19,7 @@ export const nextStep = (
   if (currentStep === 3) {
     setCurrentStep((oldState) => (oldState += 1));
   }
+  if (currentStep === 4) {
+    setCurrentStep((oldState) => (oldState += 1));
+  }
 };

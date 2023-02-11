@@ -7,10 +7,10 @@ export const StyledFormNavigation = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  padding: 1.5rem 0;
+  padding-right: 1rem;
 
-  padding: 1.5rem 1rem;
-
-  button {
+  .next-btn {
     font-size: 1rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -27,5 +27,11 @@ export const StyledFormNavigation = styled.div`
     text-transform: capitalize;
     font-weight: 600;
     color: var(--cool-gray);
+    padding: 1rem;
+  }
+
+  .next-btn:hover,
+  .go-back:hover {
+    cursor: pointer;
   }
 `;

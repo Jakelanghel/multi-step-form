@@ -4,7 +4,7 @@ import { StyledStep } from "../shared/StyledStep";
 import BillAddOn from "./BillAddOn";
 
 const Step4 = (props) => {
-  const { selectedPlan, selectedAddOns, isYearly } = props;
+  const { selectedPlan, selectedAddOns, isYearly, setCurrentStep } = props;
 
   const getPlanPrice = (plan, isYearly) => {
     const price = isYearly ? plan.price.yr : plan.price.mo;
@@ -21,6 +21,10 @@ const Step4 = (props) => {
       isYearly ? (price += addOn.price.yr) : (price += addOn.price.mo);
     });
     return isYearly ? `+$${price}/yr` : `+$${price}/mo`;
+  };
+
+  const changePlan = (setCurrentStep) => {
+    setCurrentStep(2);
   };
 
   const planString = getPlanType(selectedPlan, isYearly);
@@ -51,7 +55,12 @@ const Step4 = (props) => {
         <div className="container-bill-item plan ">
           <div className="bill-col-1 col-1">
             <p className="bill-plan-type">{planString}</p>
-            <button className="change-plan-btn">change</button>
+            <button
+              className="change-plan-btn"
+              onClick={() => changePlan(setCurrentStep)}
+            >
+              change
+            </button>
           </div>
 
           <div className="col-2">

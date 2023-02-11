@@ -43,6 +43,11 @@ const AddOn = (props) => {
       : removeAddon(setData, addOnIndex);
   };
 
+  const checked = (selectedAddOns, addOnIndex) => {
+    const isCheck = selectedAddOns.every((a) => a.index !== addOnIndex);
+    console.log(isCheck);
+  };
+
   const addOnPriceString = isYearly
     ? `+$${addOn.price.yr}/yr`
     : `+$${addOn.price.mo}/mo`;

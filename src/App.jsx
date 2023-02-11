@@ -6,6 +6,8 @@ import Step1 from "./components/steps/step-1/Step1";
 import Step2 from "./components/steps/step-2/Step2";
 import Step3 from "./components/steps/step-3/Step3";
 import Step4 from "./components/steps/step-4/Step4";
+import Step5 from "./components/steps/step-5/Step5";
+
 import FormNavigation from "./components/form-navigation/FormNavigation";
 import { plansData } from "./data/plans";
 import { addOnData } from "./data/addOns";
@@ -49,20 +51,26 @@ function App() {
             selectedAddOns={data.addOns}
             checkMarkIcon={images.checkMarkIcon}
           />
-        ) : (
+        ) : currentStep === 4 ? (
           <Step4
             selectedPlan={plansData[data.selectedPlan]}
             selectedAddOns={data.addOns}
             isYearly={data.isYearly}
+            setCurrentStep={setCurrentStep}
           />
+        ) : (
+          <Step5 img={images.thankyouIcon} />
         )}
-        <FormNavigation
-          currentStep={currentStep}
-          refArr={[nameRef, emailRef, phoneRef]}
-          setCurrentStep={setCurrentStep}
-          data={data}
-          setData={setData}
-        />
+
+        {currentStep !== 5 ? (
+          <FormNavigation
+            currentStep={currentStep}
+            refArr={[nameRef, emailRef, phoneRef]}
+            setCurrentStep={setCurrentStep}
+            data={data}
+            setData={setData}
+          />
+        ) : null}
       </div>
     </>
   );
