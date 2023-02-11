@@ -1,4 +1,4 @@
-import { checkStep1 } from "./check-steps/step-1/checkStep1";
+import { checkStep1 } from "./checkStep1";
 
 export const nextStep = (
   refArr,

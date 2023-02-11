@@ -1,7 +1,7 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import { StyledStep } from "../shared/StyledStep";
-import BillAddOn from "./BillAddOn";
+import BillAddOn from "./bill-add-on/BillAddOn";
 
 const Step4 = (props) => {
   const { selectedPlan, selectedAddOns, isYearly, setCurrentStep } = props;

@@ -29,4 +29,10 @@ export const StyledProgressBar = styled.div`
     border-radius: 50%;
     border: solid 1px var(--white);
   }
+
+  .active {
+    background-color: var(--light-blue);
+    border: solid 1px var(--light-blue);
+    color: var(--marine-blue);
+  }
 `;

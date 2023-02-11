@@ -34,7 +34,7 @@ function App() {
     <>
       <GlobalStyles />
       <div className="container-app">
-        <ProgressBar />
+        <ProgressBar currentStep={currentStep} />
         {currentStep === 1 ? (
           <Step1 nameRef={nameRef} emailRef={emailRef} phoneRef={phoneRef} />
         ) : currentStep === 2 ? (
