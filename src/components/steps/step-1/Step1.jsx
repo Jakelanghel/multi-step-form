@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledStep } from "../shared/styled-step/StyledStep";
+import { StyledStep } from "../shared/StyledStep";
 
 const Step1 = (props) => {
   return (

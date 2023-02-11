@@ -13,6 +13,8 @@ export const StyledStep = styled.main`
   justify-content: space-between;
   background-color: var(--white);
 
+  /* SHARED ==================================================================================== */
+
   .title {
     font-size: 1.75rem;
     font-weight: 700;
@@ -52,8 +54,11 @@ export const StyledStep = styled.main`
   .container-flex-1 {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     margin: 0.5rem 0;
+  }
+
+  .gap-1 {
+    gap: 1rem;
   }
 
   .space-between {
@@ -71,7 +76,7 @@ export const StyledStep = styled.main`
     cursor: pointer;
   }
 
-  /* STEP-1 =========================================================== */
+  /* STEP-1 ==================================================================================== */
   .input-label {
     display: flex;
     justify-content: space-between;
@@ -110,7 +115,7 @@ export const StyledStep = styled.main`
     border: solid 2px var(--strawberry-red);
   }
 
-  /* STEP-2 =========================================================== */
+  /* STEP-2 ==================================================================================== */
 
   .selected-plan {
     border: solid 2px var(--marine-blue);
@@ -179,7 +184,7 @@ export const StyledStep = styled.main`
     margin-left: auto;
   }
 
-  /* STEP-3 =========================================================== */
+  /* STEP-3 ==================================================================================== */
 
   .container-check-mark {
     background-color: var(--purplish-blue);
@@ -197,5 +202,88 @@ export const StyledStep = styled.main`
 
   .add-on-price {
     font-size: 0.85rem;
+  }
+
+  /* STEP-4 ==================================================================================== */
+
+  .container-plan-summary {
+    background-color: var(--magnolia);
+    border-radius: 10px;
+    padding: 0 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .container-bill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .plan {
+    border-bottom: solid 1px var(--light-gray);
+  }
+
+  .bill-col-1 {
+    padding-bottom: 1rem;
+  }
+
+  .bill-plan-type {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  .bill-plan-price,
+  .bill-add-on-price {
+    font-size: 0.95rem;
+    color: var(--marine-blue);
+  }
+
+  .bill-plan-price {
+    font-weight: 700;
+  }
+
+  .container-add-ons {
+    padding-top: 1rem;
+  }
+
+  .add-on {
+    padding-bottom: 1rem;
+  }
+
+  .bill-add-on-price {
+    font-weight: 400;
+  }
+
+  .change-plan-btn {
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: underline;
+
+    color: var(--cool-gray);
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+  }
+
+  .change-plan-btn:hover {
+    cursor: pointer;
+  }
+
+  .bill-grey-txt {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--cool-gray);
+    text-transform: capitalize;
+  }
+
+  .total {
+    padding: 1.25rem 1rem;
+  }
+
+  .total-price {
+    font-weight: 700;
   }
 `;
