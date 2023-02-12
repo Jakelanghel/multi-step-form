@@ -6,7 +6,6 @@ export const StyledFormNavigation = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
   padding: 1.5rem 0;
   padding-right: 1rem;
 

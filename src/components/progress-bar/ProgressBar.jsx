@@ -5,7 +5,6 @@ const ProgressBar = (props) => {
   const currentStep = props.currentStep;
   console.log(currentStep);
 
-  // {currentStep === 1 ? "active step-indicator" : "step-indicator"}
   return (
     <StyledProgressBar>
       <div className="container-steps">

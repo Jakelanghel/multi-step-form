@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledStep = styled.main`
   width: 90%;
+  max-width: 500px;
   position: absolute;
   top: 107px;
   left: 50%;
@@ -311,5 +312,12 @@ export const StyledStep = styled.main`
     line-height: 1.75rem;
     max-width: 340px;
     color: var(--cool-gray);
+  }
+
+  @media screen and (min-width: 900px) {
+    margin-top: 3rem;
+
+    position: static;
+    transform: translateX(0);
   }
 `;

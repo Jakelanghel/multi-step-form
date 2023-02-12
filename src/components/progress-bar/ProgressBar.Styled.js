@@ -35,4 +35,46 @@ export const StyledProgressBar = styled.div`
     border: solid 1px var(--light-blue);
     color: var(--marine-blue);
   }
+
+  @media screen and (min-width: 900px) {
+    background-image: url(${images.desktopSideBarBg});
+    background-size: cover;
+    height: 97%;
+    border-radius: 15px;
+    margin: 4%;
+
+    .container-steps {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2rem;
+      padding: 3rem 2.5rem;
+    }
+
+    .container-step {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .step,
+    .step-detail {
+      display: block;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .step {
+      font-weight: 500;
+      color: var(--cool-gray);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-detail {
+      font-weight: 700;
+      color: var(--alabaster);
+    }
+  }
 `;

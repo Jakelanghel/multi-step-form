@@ -28,48 +28,62 @@ function App() {
     isYearly: false,
   });
 
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
 
   return (
     <>
       <GlobalStyles />
       <div className="container-app">
-        <ProgressBar currentStep={currentStep} />
+        <div className="side-bar">
+          <ProgressBar currentStep={currentStep} className="side-bar" />
+        </div>
         {currentStep === 1 ? (
-          <Step1 nameRef={nameRef} emailRef={emailRef} phoneRef={phoneRef} />
+          <div className="current-step">
+            <Step1 nameRef={nameRef} emailRef={emailRef} phoneRef={phoneRef} />
+          </div>
         ) : currentStep === 2 ? (
-          <Step2
-            setData={setData}
-            isYearly={data.isYearly}
-            plansData={plansData}
-          />
+          <div className="current-step">
+            <Step2
+              setData={setData}
+              isYearly={data.isYearly}
+              plansData={plansData}
+            />
+          </div>
         ) : currentStep === 3 ? (
-          <Step3
-            setData={setData}
-            isYearly={data.isYearly}
-            addOnData={addOnData}
-            selectedAddOns={data.addOns}
-            checkMarkIcon={images.checkMarkIcon}
-          />
+          <div className="current-step">
+            <Step3
+              setData={setData}
+              isYearly={data.isYearly}
+              addOnData={addOnData}
+              selectedAddOns={data.addOns}
+              checkMarkIcon={images.checkMarkIcon}
+            />
+          </div>
         ) : currentStep === 4 ? (
-          <Step4
-            selectedPlan={plansData[data.selectedPlan]}
-            selectedAddOns={data.addOns}
-            isYearly={data.isYearly}
-            setCurrentStep={setCurrentStep}
-          />
+          <div className="current-step">
+            <Step4
+              selectedPlan={plansData[data.selectedPlan]}
+              selectedAddOns={data.addOns}
+              isYearly={data.isYearly}
+              setCurrentStep={setCurrentStep}
+            />
+          </div>
         ) : (
-          <Step5 img={images.thankyouIcon} />
+          <div className="current-step">
+            <Step5 img={images.thankyouIcon} />
+          </div>
         )}
 
         {currentStep !== 5 ? (
-          <FormNavigation
-            currentStep={currentStep}
-            refArr={[nameRef, emailRef, phoneRef]}
-            setCurrentStep={setCurrentStep}
-            data={data}
-            setData={setData}
-          />
+          <div className="form-navigation">
+            <FormNavigation
+              currentStep={currentStep}
+              refArr={[nameRef, emailRef, phoneRef]}
+              setCurrentStep={setCurrentStep}
+              data={data}
+              setData={setData}
+            />
+          </div>
         ) : null}
       </div>
     </>
