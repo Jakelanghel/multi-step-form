@@ -29,6 +29,8 @@ function App() {
   });
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [completed, setCompleted] = useState(false);
+  const stepComponents = [Step1, Step2, Step3, Step4, Step5];
 
   return (
     <>
@@ -74,7 +76,7 @@ function App() {
           </div>
         )}
 
-        {currentStep !== 5 ? (
+        {!completed ? (
           <div className="form-navigation">
             <FormNavigation
               currentStep={currentStep}
