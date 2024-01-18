@@ -3,7 +3,8 @@ import { StyledFormNavigation } from "./FormNavigation.styled";
 import { nextStep } from "./functions/nextStep";
 
 const FormNavigation = (props) => {
-  const { currentStep, refArr, setCurrentStep, data, setData } = props;
+  const { currentStep, refArr, setCurrentStep, data, setData, setCompleted } =
+    props;
 
   const removeAddOns = (setData) => {
     setData((oldState) => ({ ...oldState, addOns: [] }));
@@ -51,10 +52,17 @@ const FormNavigation = (props) => {
       <button
         className="next-btn"
         onClick={() =>
-          nextStep(refArr, currentStep, setCurrentStep, setData, data)
+          nextStep(
+            refArr,
+            currentStep,
+            setCurrentStep,
+            setData,
+            data,
+            setCompleted
+          )
         }
       >
-        {currentStep === 4 ? "confirm" : "next step"}
+        {currentStep === 3 ? "confirm" : "next step"}
       </button>
     </StyledFormNavigation>
   );

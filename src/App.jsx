@@ -28,9 +28,10 @@ function App() {
     isYearly: false,
   });
 
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [completed, setCompleted] = useState(false);
   const stepComponents = [Step1, Step2, Step3, Step4, Step5];
+  const StepComponent = stepComponents[currentStep];
 
   return (
     <>
@@ -39,42 +40,22 @@ function App() {
         <div className="side-bar">
           <ProgressBar currentStep={currentStep} className="side-bar" />
         </div>
-        {currentStep === 1 ? (
-          <div className="current-step">
-            <Step1 nameRef={nameRef} emailRef={emailRef} phoneRef={phoneRef} />
-          </div>
-        ) : currentStep === 2 ? (
-          <div className="current-step">
-            <Step2
-              setData={setData}
-              isYearly={data.isYearly}
-              plansData={plansData}
-            />
-          </div>
-        ) : currentStep === 3 ? (
-          <div className="current-step">
-            <Step3
-              setData={setData}
-              isYearly={data.isYearly}
-              addOnData={addOnData}
-              selectedAddOns={data.addOns}
-              checkMarkIcon={images.checkMarkIcon}
-            />
-          </div>
-        ) : currentStep === 4 ? (
-          <div className="current-step">
-            <Step4
-              selectedPlan={plansData[data.selectedPlan]}
-              selectedAddOns={data.addOns}
-              isYearly={data.isYearly}
-              setCurrentStep={setCurrentStep}
-            />
-          </div>
-        ) : (
-          <div className="current-step">
-            <Step5 img={images.thankyouIcon} />
-          </div>
-        )}
+        <div className="current-step">
+          <StepComponent
+            setData={setData}
+            isYearly={data.isYearly}
+            plansData={plansData}
+            addOnData={addOnData}
+            selectedAddOns={data.addOns}
+            checkMarkIcon={images.checkMarkIcon}
+            selectedPlan={plansData[data.selectedPlan]}
+            setCurrentStep={setCurrentStep}
+            img={images.thankyouIcon}
+            nameRef={nameRef}
+            emailRef={emailRef}
+            phoneRef={phoneRef}
+          />
+        </div>
 
         {!completed ? (
           <div className="form-navigation">
@@ -84,6 +65,7 @@ function App() {
               setCurrentStep={setCurrentStep}
               data={data}
               setData={setData}
+              setCompleted={setCompleted}
             />
           </div>
         ) : null}
