@@ -56,7 +56,7 @@ const Step1 = (props) => {
           name="phone"
           id="phoneInput"
           className="input"
-          placeholder="e.g +1 234 567 890"
+          placeholder="e.g +1 234 567 8900"
           ref={props.phoneRef}
         />
       </form>

@@ -19,5 +19,5 @@ export const checkStep1 = (refArr, setData) => {
       }))
     : null;
 
-  return noErrors ? true : false;
+  return noErrors;
 };
