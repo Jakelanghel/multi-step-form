@@ -7,38 +7,32 @@ import Step5 from "../steps/step-5/Step5";
 import { plansData } from "../../data/plans";
 import { addOnData } from "../../data/addOns";
 import { images } from "../../constants/images";
+import FormNavigation from "../form-navigation/FormNavigation";
+import { StyledForm } from "./Form.Styled";
 
 const Form = (props) => {
-  const {
-    data,
-    setData,
-    nameRef,
-    emailRef,
-    phoneRef,
-    currentStep,
-    setCurrentStep,
-  } = props;
-  // const [currStep, setCurrentStep] = useState(0);
+  const { currentStep, setCurrentStep } = props;
 
-  // const [data, setData] = useState({
-  //   name: null,
-  //   email: null,
-  //   phone: null,
-  //   selectedPlan: null,
-  //   addOns: [],
-  //   isYearly: false,
-  //   completed: false,
-  // });
+  const [data, setData] = useState({
+    name: null,
+    email: null,
+    phone: null,
+    selectedPlan: null,
+    addOns: [],
+    isYearly: false,
+    completed: false,
+  });
 
-  // const nameRef = useRef();
-  // const emailRef = useRef();
-  // const phoneRef = useRef();
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
 
   const stepComponents = [Step1, Step2, Step3, Step4, Step5];
   const StepComponent = stepComponents[currentStep];
+  const refArr = [nameRef, emailRef, phoneRef];
 
   return (
-    <div>
+    <StyledForm>
       <StepComponent
         setData={setData}
         isYearly={data.isYearly}
@@ -53,7 +47,16 @@ const Form = (props) => {
         emailRef={emailRef}
         phoneRef={phoneRef}
       />
-    </div>
+      {!data.completed ? (
+        <FormNavigation
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          refArr={refArr}
+          data={data}
+          setData={setData}
+        />
+      ) : null}
+    </StyledForm>
   );
 };
 

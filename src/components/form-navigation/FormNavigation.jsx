@@ -3,8 +3,7 @@ import { StyledFormNavigation } from "./FormNavigation.styled";
 import { nextStep } from "./functions/nextStep";
 
 const FormNavigation = (props) => {
-  const { currentStep, refArr, setCurrentStep, data, setData, setCompleted } =
-    props;
+  const { currentStep, refArr, setCurrentStep, data, setData } = props;
 
   const removeAddOns = (setData) => {
     setData((oldState) => ({ ...oldState, addOns: [] }));

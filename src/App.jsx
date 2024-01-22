@@ -6,22 +6,7 @@ import FormNavigation from "./components/form-navigation/FormNavigation";
 import Form from "./components/form/Form";
 
 function App() {
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const phoneRef = useRef();
-
-  const [data, setData] = useState({
-    name: null,
-    email: null,
-    phone: null,
-    selectedPlan: null,
-    addOns: [],
-    isYearly: false,
-  });
-
   const [currentStep, setCurrentStep] = useState(0);
-
-  const [completed, setCompleted] = useState(false);
 
   return (
     <>
@@ -32,27 +17,9 @@ function App() {
         </div>
         <Form
           className="current-step"
-          nameRef={nameRef}
-          emailRef={emailRef}
-          phoneRef={phoneRef}
-          setData={setData}
-          data={data}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
         />
-
-        {!completed ? (
-          <div className="form-navigation">
-            <FormNavigation
-              currentStep={currentStep}
-              refArr={[nameRef, emailRef, phoneRef]}
-              setCurrentStep={setCurrentStep}
-              data={data}
-              setData={setData}
-              setCompleted={setCompleted}
-            />
-          </div>
-        ) : null}
       </div>
     </>
   );

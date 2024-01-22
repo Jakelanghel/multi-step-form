@@ -8,6 +8,7 @@ export const StyledFormNavigation = styled.div`
   align-items: center;
   padding: 1.5rem 0;
   padding-right: 1rem;
+  margin-top: auto;
 
   .next-btn {
     font-size: 1rem;
