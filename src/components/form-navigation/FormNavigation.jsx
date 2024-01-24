@@ -51,14 +51,7 @@ const FormNavigation = (props) => {
       <button
         className="next-btn"
         onClick={() =>
-          nextStep(
-            refArr,
-            currentStep,
-            setCurrentStep,
-            setData,
-            data,
-            setCompleted
-          )
+          nextStep(refArr, currentStep, setCurrentStep, setData, data)
         }
       >
         {currentStep === 3 ? "confirm" : "next step"}

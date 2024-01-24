@@ -1,8 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { GlobalStyles } from "./components/shared/Global";
-
 import ProgressBar from "./components/progress-bar/ProgressBar";
-import FormNavigation from "./components/form-navigation/FormNavigation";
 import Form from "./components/form/Form";
 
 function App() {

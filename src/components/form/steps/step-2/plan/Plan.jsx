@@ -14,6 +14,7 @@ const Plan = (props) => {
       ...oldState,
       selectedPlan: parseInt(index.index),
     }));
+    console.log("X");
   };
 
   const price = isYearly ? plan.price.mo : plan.price.yr;

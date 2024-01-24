@@ -5,22 +5,17 @@ export const nextStep = (
   currentStep,
   setCurrentStep,
   setData,
-  data,
-  setCompleted
+  data
 ) => {
+  let noErrors = false;
+
   if (currentStep === 0) {
-    const step1 = checkStep1(refArr, setData);
-    step1 ? setCurrentStep((oldState) => (oldState += 1)) : null;
+    noErrors = checkStep1(refArr, setData);
   }
   if (currentStep === 1) {
-    data.selectedPlan !== null
-      ? setCurrentStep((oldState) => (oldState += 1))
-      : null;
+    noErrors = data.selectedPlan;
   }
-  if (currentStep === 2) {
-    setCurrentStep((oldState) => (oldState += 1));
-  }
-  if (currentStep === 3) {
+  if (noErrors) {
     setCurrentStep((oldState) => (oldState += 1));
   }
 };

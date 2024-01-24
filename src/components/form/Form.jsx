@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import Step1 from "../steps/step-1/Step1";
-import Step2 from "../steps/step-2/Step2";
-import Step3 from "../steps/step-3/Step3";
-import Step4 from "../steps/step-4/Step4";
-import Step5 from "../steps/step-5/Step5";
+import Step1 from "./steps/step-1/Step1";
+import Step2 from "./steps/step-2/Step2";
+import Step3 from "./steps/step-3/Step3";
+import Step4 from "./steps/step-4/Step4";
+import Step5 from "./steps/step-5/Step5";
 import { plansData } from "../../data/plans";
 import { addOnData } from "../../data/addOns";
 import { images } from "../../constants/images";
@@ -17,7 +17,7 @@ const Form = (props) => {
     name: null,
     email: null,
     phone: null,
-    selectedPlan: null,
+    selectedPlan: false,
     addOns: [],
     isYearly: false,
     completed: false,
